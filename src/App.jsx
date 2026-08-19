@@ -5,8 +5,11 @@ function App() {
   const [quantity, setQuantity] = useState(null);
   const [showBill, setShowBill] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
-
-  const rate = 62;
+  const [rate, setRate] = useState(() => {
+    return localStorage.getItem("milkRate") 
+      ? Number(localStorage.getItem("milkRate")) 
+      : 62; // default
+  });
 
   const [selectedMonth, setSelectedMonth] = useState(
     new Date().toISOString().slice(0, 7)
@@ -85,7 +88,20 @@ function App() {
           <button onClick={() => setQuantity(1.5)}>1.5 L</button>
           <button onClick={() => setQuantity(2)}>2 L</button>
 
-          <p>Selected: {quantity} </p>
+          <p>Selected: {quantity} L</p>
+
+          {/* 👉 Rate input box */}
+          <h3>Milk Rate</h3>
+          <input
+            type="number"
+            value={rate}
+            onChange={(e) => {
+              const newRate = Number(e.target.value);
+              setRate(newRate);
+              localStorage.setItem("milkRate", newRate);
+            }}
+          />
+          <p>Current Rate: ₹{rate} per liter</p>
         </div>
       )}
 
