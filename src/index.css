@@ -1,0 +1,44 @@
+.container {
+  max-width: 480px; /* mobile width */
+  margin: auto;
+  padding: 16px;
+  font-family: sans-serif;
+}
+button {
+  background: linear-gradient(135deg, #4CAF50, #81C784);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 6px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: #f1f1f1;
+  width: 100%;
+}
+
+option {
+  padding: 8px;
+}
+
+
